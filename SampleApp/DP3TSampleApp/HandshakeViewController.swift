@@ -169,7 +169,7 @@ class HandshakeViewController: UIViewController {
             var end = 1
             while end < sortedGroup.count {
                 let timeDelay = abs(sortedGroup[end].timestamp.timeIntervalSince(sortedGroup[end - 1].timestamp))
-                if timeDelay > Double(MAX_NUMBER_OF_MISSING_HANDSHAKES * DP3TTracing.reconnectionDelay) {
+                if timeDelay > Double.infinity {
                     let startTime = sortedGroup[start].timestamp
                     let endTime = sortedGroup[end - 1].timestamp
                     let elapsedTime = abs(startTime.timeIntervalSince(endTime))
